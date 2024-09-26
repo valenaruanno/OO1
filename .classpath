@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="ejercicio2/src/main/java"/>
+	<classpathentry kind="src" path="ejercicio2/src/test/java"/>
+	<classpathentry kind="src" path="ejercicio3/src/main/java"/>
+	<classpathentry kind="src" path="ejercicio3/src/test/java"/>
+	<classpathentry kind="src" path="ejercicio4/src/main/java"/>
+	<classpathentry kind="src" path="ejercicio4/src/test/java"/>
+	<classpathentry kind="src" path="ejercicio5/src/main/java"/>
+	<classpathentry kind="src" path="ejercicio5/src/test/java"/>
+	<classpathentry kind="src" path="ejercicio6/src/main/java"/>
+	<classpathentry kind="src" path="ejercicio6/src/test/java"/>
+	<classpathentry kind="output" path="ejercicio4/target/classes"/>
+</classpath>

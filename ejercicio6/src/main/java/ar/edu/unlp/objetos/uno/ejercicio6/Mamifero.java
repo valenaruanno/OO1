@@ -87,11 +87,11 @@ public class Mamifero {
 	public boolean tieneComoAncestroA (Mamifero unMamifero) {
 		boolean tiene = false;
 		if (this.padre != null) {
-			if ((this.padre == unMamifero) || (this.getAbuelaPaterna() == unMamifero) || (this.getAbueloPaterno() == unMamifero))
+			if ((this.padre == unMamifero) || (this.padre.tieneComoAncestroA(unMamifero)))
 				tiene = true;
 		}
 		if ((tiene == false) && (this.madre != null)) {
-			if ((this.madre == unMamifero) || (this.getAbuelaMaterna() == unMamifero) || (this.getAbueloMaterno() == unMamifero))
+			if ((this.madre == unMamifero) || (this.madre.tieneComoAncestroA(unMamifero)))
 				tiene = true;
 		}
 		return tiene;

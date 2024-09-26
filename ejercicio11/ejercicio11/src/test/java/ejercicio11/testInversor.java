@@ -14,4 +14,6 @@ void setUp() throws Exception {
 	this.plazo = new PlazoFijo(1000, 10);
 	this.acciones = new InversionEnAcciones("aplle", 10, 1000);
 }
+
+
 }

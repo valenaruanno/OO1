@@ -5,12 +5,15 @@ import java.util.List;
 
 public class Inversor {
 	private String nombre;
-	private List<Inversion> inversiones;
+	private List<Inversion> inversiones = new ArrayList<>();
 	
-	public Inversor(String nombre, List<Inversion> inversiones) {
+	public Inversor() {
 		super();
+	}
+
+	public Inversor(String nombre, List<Inversion> inversiones) {
 		this.nombre = nombre;
-		this.inversiones = new ArrayList<>();
+		this.inversiones.addAll(inversiones);
 	}
 
 	public String getNombre() {
@@ -29,6 +32,15 @@ public class Inversor {
 		this.inversiones = inversiones;
 	}
 	
+	public Inversion getInversion (int pos) {
+		return this.inversiones.get(pos);
+	}
 	
+	public void setInversion (Inversion inv) {
+		this.inversiones.add(inv);
+	}
+	public double valorActual() {
+		return inversiones.stream().mapToDouble(inv -> inv.valorActual()).sum();
+	}
 	
 }

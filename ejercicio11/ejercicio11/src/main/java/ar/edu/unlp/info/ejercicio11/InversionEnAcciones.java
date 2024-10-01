@@ -50,7 +50,7 @@ public class InversionEnAcciones implements Inversion {
 
 
 
-	public double valorTotal() {
+	public double valorAcual() {
 		return this.cantidad * this.getValorUnitario();
 	}
 	

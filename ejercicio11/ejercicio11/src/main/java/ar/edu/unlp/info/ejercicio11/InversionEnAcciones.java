@@ -49,8 +49,8 @@ public class InversionEnAcciones implements Inversion {
 	}
 
 
-
-	public double valorAcual() {
+	@Override
+	public double valorActual() {
 		return this.cantidad * this.getValorUnitario();
 	}
 	

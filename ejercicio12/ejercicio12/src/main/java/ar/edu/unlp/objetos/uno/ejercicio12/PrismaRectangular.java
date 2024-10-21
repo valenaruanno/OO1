@@ -51,6 +51,13 @@ public class PrismaRectangular extends Pieza{
 	public double superficie() {
 		return 2 * ((this.ladoMayor * this.ladoMenor) + (this.ladoMayor * this.altura) + (this.ladoMenor * this.altura));
 	}
+
+
+	@Override
+	public double volumenDeMateral(String material) {
+		// TODO Auto-generated method stub			//Por que??
+		return 0;
+	}
 	
 	
 }

@@ -1,14 +1,19 @@
 package ar.edu.unlp.objetos.uno.ejercicio12;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Pieza extends ReporteConstruccion {
 	String material;
 	String color;
+	List<Pieza> lista;
 	
 	
 	public Pieza(String material, String color) {
 		super();
 		this.material = material;
 		this.color = color;
+		lista = new ArrayList();
 	}
 	
 	
@@ -31,12 +36,8 @@ public abstract class Pieza extends ReporteConstruccion {
 		this.color = color;
 	}
 
-
-	public double volumenDeMaterial (String material) {
-		return 0;
-	}
-	public double superficieDeColor(String color) {
-		return 0;
+	public void añadirPieza (Pieza pieza) {
+		lista.add(pieza);
 	}
 	
 	public abstract double volumen();

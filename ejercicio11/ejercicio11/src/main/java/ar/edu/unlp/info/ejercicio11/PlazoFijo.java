@@ -53,11 +53,8 @@ public class PlazoFijo implements Inversion {
 
 
 	public double calcularIntereses() {
-	    if (this.porcentajeDeInteresesDiarios > 0) {
 	        long dias = ChronoUnit.DAYS.between(fechaDeConstitucion, LocalDate.now());
-	        return dias * this.porcentajeDeInteresesDiarios;
-	    }
-	    return 0.0;  // Si hay algún problema, retorna 0
+	        return dias * this.porcentajeDeInteresesDiarios; 
 	}
 
 	public double valorActual() {

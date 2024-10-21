@@ -4,17 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReporteConstruccion {
-	List<Pieza> lista = new ArrayList<>();
+	private List<Pieza> piezas;
 	
 	
-	public  double volumenDeMateral (String material);
-	public  double superficieDeColor (String color);
-	
-	public double getVolumenDeMaterial (String nombreDeMaterial) {
-		return lista.stream().filter(p -> p.getMaterial().equals(nombreDeMaterial)).mapToDouble(p -> p.volumen()).sum();
+	public ReporteConstruccion() {
+		this.piezas = new ArrayList<Pieza>();
 	}
 	
-	public double getSuperficieDeColor (String unNombreDeColor) {
-		return lista.stream().filter(p -> p.getColor().equals(unNombreDeColor)).mapToDouble(p -> p.superficie()).sum();
+	public void addPieza (Pieza pieza) {
+		this.piezas.add(pieza);
 	}
+	
+	public double volumenDeMateral (String material) {
+		return piezas.stream().filter(p -> p.getMaterial().equals(material)).mapToDouble(p -> p.volumen()).sum();
+	}
+	
+	public double superficieDeColor (String color) {
+		return piezas.stream().filter(p -> p.getColor().equals(color)).mapToDouble(p -> p.superficie()).sum();
+	}
+		
 }

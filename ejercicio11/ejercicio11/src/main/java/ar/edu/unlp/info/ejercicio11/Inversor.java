@@ -39,6 +39,10 @@ public class Inversor {
 	public void setInversion (Inversion inv) {
 		this.inversiones.add(inv);
 	}
+	
+	public void addInversion (Inversion inv) {
+		inversiones.add(inv);
+	}
 	public double valorActual() {
 		return inversiones.stream().mapToDouble(inv -> inv.valorActual()).sum();
 	}

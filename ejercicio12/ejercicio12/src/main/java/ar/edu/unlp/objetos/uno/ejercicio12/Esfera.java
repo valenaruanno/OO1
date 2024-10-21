@@ -22,10 +22,10 @@ public class Esfera extends Pieza {
 
 	@Override
 	public double volumen() {
-		return (4/3) * Math.PI * (Math.pow(this.radio, this.radio) * this.radio);
+		return ((4.0/3.0) * Math.PI * (Math.pow(this.radio, 3)));
 	}
 	
 	public double superficie () {
-		return 4 * Math.PI * (Math.pow(this.radio, this.radio));
+		return 4 * Math.PI * (Math.pow(this.radio, 2));
 	}
 }

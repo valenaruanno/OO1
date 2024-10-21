@@ -17,6 +17,6 @@ void setUp() throws Exception{
 
 @Test
 void testValorActual () {
-	assertEquals(1000,accion.valorAcual());
+	assertEquals(1000,accion.valorActual());
 }
 }

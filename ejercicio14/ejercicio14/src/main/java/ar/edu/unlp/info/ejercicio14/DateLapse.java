@@ -21,7 +21,7 @@ public class DateLapse implements Date {
 		return to;
 	}
 	
-	public int sizeInDays () {
+	public int sizeInDays (LocalDate from, LocalDate to) {
 		return (int) from.until(to, ChronoUnit.DAYS);
 	}
 	

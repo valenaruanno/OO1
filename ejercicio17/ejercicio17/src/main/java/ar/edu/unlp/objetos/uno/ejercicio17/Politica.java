@@ -19,18 +19,19 @@ public class Politica {
 		this.politica = politica;
 	}
 	
-	public double calcularReembolso (DateLapse fecha, double precio, int cantDias) {
+	public double calcularReembolso (DateLapse fecha, double precio) {
 		double reembolso = 0;
+		int cant = fecha.sizeInDays(LocalDate.now(), fecha.getFrom());
+		System.out.println(cant + " Cantidad de dias");
 		if ((this.politica.equals("Flexible")) && (fecha.getFrom().isAfter(LocalDate.now()))) {
-			reembolso = precio * cantDias;
+			reembolso = precio * cant;
 		} else {
 			if (this.politica.equals("Moderada")) {
-				int cant = fecha.sizeInDays(LocalDate.now(), fecha.getFrom());
 				if (cant >= 7)
-					reembolso = precio * cantDias;
+					reembolso = precio * cant;
 				else 
 					if (cant >= 2)
-						reembolso = (precio * cantDias) / 2;
+						reembolso = ((precio * cant) / 2);
 			} 
 		}
 		return reembolso;

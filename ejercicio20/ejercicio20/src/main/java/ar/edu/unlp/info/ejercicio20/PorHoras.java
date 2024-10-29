@@ -54,9 +54,12 @@ public class PorHoras extends Contrato{
 
 
 
-	@Override
 	public double calcularMonto() {
 		return this.valorPorHora * this.horasPorMes;
+	}
+	
+	public boolean estaVigente () {
+		return LocalDate.now().isBefore(fin);
 	}
 	
 	

@@ -52,9 +52,17 @@ public class DePlanta extends Contrato{
 	}
 
 
-	@Override
-	public double calcularMonto() {
-		return this.sueldoMensual;
+
+	public double calcularMonto(Empleado empleado) {
+		double monto = this.sueldoMensual;
+		if (empleado.isaCargoConjugue())
+			monto += this.montoPorConjugue;
+		if (empleado.isaCargoHijo())
+			monto += this.montoPorHijo;
+		return monto;
 	}
 
+	public boolean estaVigente () {
+		return true;
+	}
 }

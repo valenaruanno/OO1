@@ -20,6 +20,9 @@ public class Usuario {
 		this.reservas = new ArrayList<Reserva> ();
 	}
 	
+	public void agregarPropiedad (Propiedad propiedad) {
+		propiedades.add(propiedad);
+	}
 	public double calcularIngresos (LocalDate inicial, LocalDate finalR){
 		double total = propiedades.stream().mapToDouble(p -> p.calcularMisReservas(inicial, finalR)).sum();
 		return total * 0.75;

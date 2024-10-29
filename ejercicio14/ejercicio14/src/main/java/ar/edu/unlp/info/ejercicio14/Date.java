@@ -6,5 +6,6 @@ public interface Date {
 	
 	public boolean includesDate (LocalDate fecha);
 	
+	public int sizeInDays (LocalDate from, LocalDate to);
 	public int sizeInDays ();
 }

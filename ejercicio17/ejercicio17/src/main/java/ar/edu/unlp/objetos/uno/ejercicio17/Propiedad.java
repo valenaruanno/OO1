@@ -22,23 +22,34 @@ public class Propiedad {
 		this.reservas = new ArrayList<Reserva> ();
 	}
 	
-	public void crearReserva (LocalDate inicial, LocalDate finalR) {
+	public boolean crearReserva (LocalDate inicial, LocalDate finalR) {
 		if (disponibilidad(inicial, finalR)) {
 			Reserva nueva = new Reserva (inicial, finalR);
 			this.reservas.add(nueva);
-		}
+			return true;
+		} else
+			return false;
 	}
 	
-	public void cancelarReserva (LocalDate inicial, LocalDate finalR) {
+	public boolean cancelarReserva (LocalDate inicial, LocalDate finalR) {
 		if ((LocalDate.now().isBefore(inicial)) || (LocalDate.now().isAfter(finalR))) {
 			DateLapse lapso = new DateLapse (inicial, finalR);
 			reservas.remove(lapso);
-			System.out.println("El monto de reembolso es de $" + politica.calcularReembolso(lapso, this.precio, lapso.sizeInDays()));
-		}
+			System.out.println("El monto de reembolso es de $" + politica.calcularReembolso(lapso, this.precio));
+			return true;
+		} else
+			return false;
 	}
 	
+	/*public boolean disponibilidad (LocalDate inicial, LocalDate finalR) {
+		if (reservas.isEmpty())
+			return true;
+		else
+			return reservas.stream().noneMatch(reserva -> reserva.getDuracion().includesDate(inicial) || reserva.getDuracion().includesDate(finalR));
+	}*/
+	
 	public boolean disponibilidad (LocalDate inicial, LocalDate finalR) {
-		return reservas.stream().anyMatch(reserva -> reserva.getDuracion().includesDate(inicial) || reserva.getDuracion().includesDate(finalR));
+		return reservas.stream().noneMatch(r -> r.getDuracion().getFrom().isBefore(inicial) || r.getDuracion().getTo().isAfter(finalR));
 	}
 	
 	public double calcularMisReservas (LocalDate inicio, LocalDate finalR) {

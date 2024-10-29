@@ -22,10 +22,14 @@ public class DateLapse implements Date {
 	}
 	
 	public int sizeInDays (LocalDate from, LocalDate to) {
-		return (int) from.until(to, ChronoUnit.DAYS);
+		return (int) this.from.until(this.to, ChronoUnit.DAYS);
 	}
 	
+	public int sizeInDays () {
+		return (int) this.from.until(this.to, ChronoUnit.DAYS);
+	}
 	public boolean includesDate (LocalDate fecha) {
 		return ((fecha.isAfter(from) || (fecha.isEqual(from))) && ((fecha.isBefore(to)) || (fecha.isEqual(to))));
 	}
 }
+

@@ -1,6 +1,7 @@
 package ar.edu.unlp.info.ejercicio20;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 public abstract class Contrato {
 	private LocalDate inicio;
@@ -21,5 +22,9 @@ public abstract class Contrato {
 	}
 
 
-	public abstract double calcularMonto ();
+	public abstract boolean estaVigente ();
+	
+	public int calcularDuracion () {
+		return Period.between(inicio, LocalDate.now()).getYears();
+	}
 }

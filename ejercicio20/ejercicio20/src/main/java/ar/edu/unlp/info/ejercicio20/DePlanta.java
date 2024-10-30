@@ -65,4 +65,12 @@ public class DePlanta extends Contrato{
 	public boolean estaVigente () {
 		return true;
 	}
+
+
+
+	@Override
+	public double calcularMonto() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

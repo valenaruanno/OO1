@@ -14,23 +14,24 @@ public class Recibo {
 	public double calcularMonto () {
 		Contrato contratoActivo = e1.getContratoActivo();
 		int duracionContrato = contratoActivo.calcularDuracion();
+		System.out.println(duracionContrato + " Duracion");
 		double monto = contratoActivo.calcularMonto();
+		System.out.println(monto + " Monto");
 		if (duracionContrato >= 5)
-			return monto * 1.30;
+			monto *= 1.30;
 		else {
 			if (duracionContrato >= 10)
-				return monto * 1.50;
+				monto *= 1.50;
 			else {
 				if (duracionContrato >= 15)
-					return monto * 1.70;
+					monto *= 1.70;
 				else {
 					if (duracionContrato >= 20)
-						return monto + monto;
-					else 
-						return monto;
+						monto += monto;
 				}
 			}
 		}
+		return monto;
 	}
 	
 	public void generarRecibo () {

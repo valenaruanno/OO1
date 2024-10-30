@@ -15,6 +15,17 @@ public class Empleado {
 	private List<Contrato> contratos = new ArrayList<Contrato> ();
 	private List<Recibo> recibos;
 	
+	public Empleado(String nombre, String apellido, String cuil, LocalDate nacimiento, boolean aCargoHijo,
+			boolean aCargoConjugue) {
+		super();
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.cuil = cuil;
+		this.nacimiento = nacimiento;
+		this.aCargoHijo = aCargoHijo;
+		this.aCargoConjugue = aCargoConjugue;
+		this.recibos = new ArrayList <Recibo> ();
+	}
 	
 	public String getNombre() {
 		return nombre;
@@ -96,20 +107,12 @@ public class Empleado {
 	}
 
 
-	public Empleado(String nombre, String apellido, String cuil, LocalDate nacimiento, boolean aCargoHijo,
-			boolean aCargoConjugue, Contrato contrato) {
-		super();
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.cuil = cuil;
-		this.nacimiento = nacimiento;
-		this.aCargoHijo = aCargoHijo;
-		this.aCargoConjugue = aCargoConjugue;
-		this.contratos.add(contrato);
-		this.recibos = new ArrayList <Recibo> ();
-	}
 
 	public Contrato getContratoActivo () {
 		return this.contratos.stream().filter(c -> c.estaVigente()).findFirst().orElse(null);
+	}
+	
+	public void agregarContrato (Contrato c) {
+		this.contratos.add(c);
 	}
 }

@@ -7,7 +7,6 @@ public abstract class Contrato {
 	private LocalDate inicio;
 
 	public Contrato(LocalDate inicio) {
-		super();
 		this.inicio = inicio;
 	}
 	
@@ -23,8 +22,8 @@ public abstract class Contrato {
 
 
 	public abstract boolean estaVigente ();
-	
+	public abstract double calcularMonto();
 	public int calcularDuracion () {
-		return Period.between(inicio, LocalDate.now()).getYears();
+		return Period.between(this.inicio, LocalDate.now()).getYears();
 	}
 }

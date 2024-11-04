@@ -1,4 +1,4 @@
-package ar.edu.unlp.objetos.uno.ejercicio20;
+package ar.edu.unlp.info.ejercicio20;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -23,16 +23,16 @@ public class DePlantaTest {
 	@Test
 	public void noTieneHijosNiConyugue() {
 		empleado.agregarContrato(contratoDePlanta);
-		assertEquals(500, contratoDePlanta.calcularMonto(empleado));
+		assertEquals(500, contratoDePlanta.calcularMonto(empleado.isaCargoConjugue(), empleado.isaCargoHijo()));
 	}
 	
 	public void TieneHijos() {
 		empleado .agregarContrato(contratoDePlanta);
-		assertEquals(500, contratoDePlanta.calcularMonto(empleado));
+		assertEquals(500, contratoDePlanta.calcularMonto(empleado.isaCargoConjugue(), empleado.isaCargoHijo()));
 	}
 	
 	public void TieneConyugue() {
 		empleado.agregarContrato(contratoDePlanta);
-		assertEquals(500, contratoDePlanta.calcularMonto(empleado));
+		assertEquals(500, contratoDePlanta.calcularMonto(empleado.isaCargoConjugue(), empleado.isaCargoHijo()));
 	}
 }

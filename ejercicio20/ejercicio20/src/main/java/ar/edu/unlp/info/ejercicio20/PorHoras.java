@@ -54,7 +54,7 @@ public class PorHoras extends Contrato{
 
 
 
-	public double calcularMonto() {
+	public double calcularMonto(boolean coyugue, boolean hijo) {
 		return this.valorPorHora * this.horasPorMes;
 	}
 	

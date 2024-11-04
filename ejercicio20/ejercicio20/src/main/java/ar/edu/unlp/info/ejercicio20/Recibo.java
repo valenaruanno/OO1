@@ -15,16 +15,16 @@ public class Recibo {
 		Contrato contratoActivo = e1.getContratoActivo();
 		int duracionContrato = contratoActivo.calcularDuracion();
 		System.out.println(duracionContrato + " Duracion");
-		double monto = contratoActivo.calcularMonto();
+		double monto = contratoActivo.calcularMonto(e1.isaCargoConjugue(), e1.isaCargoHijo());
 		System.out.println(monto + " Monto");
 		if (duracionContrato >= 5)
-			monto *= 1.30;
+			monto = monto * 1.30;
 		else {
 			if (duracionContrato >= 10)
-				monto *= 1.50;
+				monto = monto * 1.50;
 			else {
 				if (duracionContrato >= 15)
-					monto *= 1.70;
+					monto = monto * 1.70;
 				else {
 					if (duracionContrato >= 20)
 						monto += monto;

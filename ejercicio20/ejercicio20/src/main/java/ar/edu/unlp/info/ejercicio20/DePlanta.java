@@ -53,11 +53,11 @@ public class DePlanta extends Contrato{
 
 
 
-	public double calcularMonto(Empleado empleado) {
+	public double calcularMonto(boolean conyugue, boolean hijo) {
 		double monto = this.sueldoMensual;
-		if (empleado.isaCargoConjugue())
+		if (conyugue)
 			monto += this.montoPorConjugue;
-		if (empleado.isaCargoHijo())
+		if (hijo)
 			monto += this.montoPorHijo;
 		return monto;
 	}
@@ -66,11 +66,4 @@ public class DePlanta extends Contrato{
 		return true;
 	}
 
-
-
-	@Override
-	public double calcularMonto() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 }

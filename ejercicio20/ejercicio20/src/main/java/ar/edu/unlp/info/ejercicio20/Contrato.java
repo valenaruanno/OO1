@@ -22,7 +22,7 @@ public abstract class Contrato {
 
 
 	public abstract boolean estaVigente ();
-	public abstract double calcularMonto();
+	public abstract double calcularMonto(boolean conyugue, boolean hijo);
 	public int calcularDuracion () {
 		return Period.between(this.inicio, LocalDate.now()).getYears();
 	}

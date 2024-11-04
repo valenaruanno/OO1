@@ -1,4 +1,4 @@
-package ar.edu.unlp.objetos.uno.ejercicio20;
+package ar.edu.unlp.info.ejercicio20;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -23,7 +23,7 @@ public class ReciboTest {
 	
 	@BeforeEach
 	public void setUp () {
-		e = new Empleado("valentin", "apellido", "123", LocalDate.of(2004, 10, 13), false, false);
+		e = new Empleado("Valentin", "Aruanno", "123", LocalDate.of(2004, 10, 13), false, false);
 		r = new Recibo (e);
 	}
 	
@@ -31,6 +31,7 @@ public class ReciboTest {
 	public void calcularMonto5 () {
 		c = new DePlanta(LocalDate.of(2019, 10, 28), 500, 0, 0);
 		e.agregarContrato(c);
-		assertEquals (150,r.calcularMonto());
+		assertEquals (650,r.calcularMonto());
+		r.generarRecibo();
 	}
 }

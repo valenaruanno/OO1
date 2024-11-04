@@ -26,4 +26,8 @@ public abstract class ClienteDeCorreo {
 		return this.carpetas.stream().mapToInt(c -> c.espacioOcupado()).sum();
 	}
 	public abstract void recibir (Email email);
+	
+	public int cantidadTotalEmails () {
+		return this.carpetas.stream().mapToInt(c -> c.cantidadEmails()).sum();
+	}
 }

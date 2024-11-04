@@ -1,4 +1,4 @@
-package ar.edu.unlp.objetos.uno.ejercicio20;
+package ar.edu.unlp.info.ejercicio20;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -29,6 +29,6 @@ public class PorHorasTest {
 	
 	@Test
 	public void calcularMontoTest () {
-		assertEquals (2500, pH.calcularMonto());
+		assertEquals (2500, pH.calcularMonto(true, true));
 	}
 }

@@ -20,9 +20,9 @@ public class BagImpl<T> extends AbstractCollection<T> implements Bag<T> {
         // TODO Completar con la implementación correspondiente
     	if (!this.elements.containsKey(element)) {
     		this.elements.put(element, 1);
-    		return true;
     	} else
-    		return false;
+    		this.elements.put(element, this.elements.get(element) + 1);
+    	return true;
     }
 
     @Override
